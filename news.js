@@ -7,12 +7,19 @@ function call(cate) {
         type:'GET',
         url:`https://hg0209.herokuapp.com/https://newsapi.org/v2/top-headlines?country=kr&apiKey=4d2feeea044b4bccbec8a08612f138c3${subcate}`,
         dataType:'json',
+        beforeSend:function(){
+            $('#content').append('<div class="loading">로딩중입니다.</div>')
+        },
+        complete:function(){
+            $('#content .loading').remove()
+        },
+        timeout:2000,
         success:function(getdata){
             console.log(getdata)
             usedata(getdata)
         },
         error:function(xhr){
-            console.log(xhr.status + '/' + xhr.errorText )
+            alert(xhr.status + '/' + xhr.errorText )
         }
     })
 }
