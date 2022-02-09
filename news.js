@@ -5,7 +5,7 @@ function call(cate) {
     }
     $.ajax({
         type:'GET',
-        url:`https://newsapi.org/v2/top-headlines?country=kr&apiKey=4d2feeea044b4bccbec8a08612f138c3${subcate}`,
+        url:`https://hg0209.herokuapp.com/https://newsapi.org/v2/top-headlines?country=kr&apiKey=4d2feeea044b4bccbec8a08612f138c3${subcate}`,
         dataType:'json',
         success:function(getdata){
             console.log(getdata)
